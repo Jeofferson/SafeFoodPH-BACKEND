@@ -1,0 +1,22 @@
+user
+user_id  username  password  first_name  last_name  display_picture  address  is_logged_in
+
+
+product
+product_id  seller_id  product_name  display_picture  category  price  quantity  description  is_tradable
+
+
+cart
+cart_id  user_id  product_id
+
+
+order
+order_id  product_id  buyer_id  seller_id  quantity  is_thru_cash  additional_message  is_confirmed  is_delivered
+
+
+good_for_trade
+good_for_trade_id  order_id  good_name  quantity
+
+
+feedback
+feedback_id  receiver_id  rating  description
