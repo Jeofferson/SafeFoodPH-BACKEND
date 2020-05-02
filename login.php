@@ -36,7 +36,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $output["firstName"] = $row["first_name"];
         $output["lastName"] = $row["last_name"];
         $output["displayPicture"] = $row["display_picture"];
-        $output["address"] = $row["address"];
+        $output["city"] = $row["city"];
+        $output["province"] = $row["province"];
     
     }
     

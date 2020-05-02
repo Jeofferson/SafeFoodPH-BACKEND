@@ -10,7 +10,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $password = $_POST["password"];
     $firstName = $_POST["firstName"];
     $lastName = $_POST["lastName"];
-    $address = $_POST["address"];
+    $city = $_POST["city"];
+    $province = $_POST["province"];
     
     $sql = "
         SELECT COUNT(*)
@@ -29,8 +30,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $sql = "
             INSERT INTO
-            user (username, password, first_name, last_name, display_picture, address)
-            VALUES ('$username', '$password', '$firstName', '$lastName', '', '$address')
+            user (username, password, first_name, last_name, display_picture, city, province)
+            VALUES ('$username', '$password', '$firstName', '$lastName', '', '$city', '$province')
         ";
 
         if ($conn->query($sql) === FALSE) {
