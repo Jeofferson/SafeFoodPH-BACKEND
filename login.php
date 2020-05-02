@@ -10,18 +10,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // $password = sha1($_POST["password"]);
     $password = $_POST["password"];
 
-	$sql = "SELECT * FROM user WHERE username = '$username' AND password = '$password'";
+	$sql = "
+        SELECT *
+        FROM user
+        WHERE username = '$username' AND password = '$password'
+    ";
     
-    $result = mysqli_query($conn, $sql);
+    $result = $conn->query($sql);
     
-    if (mysqli_num_rows($result) <= 0) {
+    if ($result->num_rows <= 0) {
     
         $output["status"] = "failed";
         $output["errorMessage"] = "Invalid username or password.";
     
     } else {
     
-        $row = mysqli_fetch_assoc($result);
+        $row = $result->fetch_assoc();
     
         $output["status"] = "success";
 
@@ -33,12 +37,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $output["lastName"] = $row["last_name"];
         $output["displayPicture"] = $row["display_picture"];
         $output["address"] = $row["address"];
-        $output["isLoggedIn"] = $row["is_logged_in"];
     
     }
     
     echo json_encode($output);
-    mysqli_close($conn);
+    $conn->close();
 
 }
 

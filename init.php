@@ -1,12 +1,16 @@
 <?php
 
 
-define("DB_HOST", "localhost");
-define("DB_USER", "root");
-define("DB_PASSWORD", "root");
-define("DB_DATABASE", "db_safefoodph");
+define("SERVER_NAME", "localhost");
+define("USERNAME", "root");
+define("PASSWORD", "root");
+define("DB_NAME", "db_safefoodph");
 
-$conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE);
+$conn = new mysqli(SERVER_NAME, USERNAME, PASSWORD, DB_NAME);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
 
 ?>
