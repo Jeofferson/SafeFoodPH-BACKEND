@@ -1,9 +1,9 @@
 user
-user_id  username  password  first_name  last_name  display_picture  address  is_logged_in
+user_id  username  password  first_name  last_name  display_picture  address
 
 
 product
-product_id  seller_id  product_name  display_picture  category  price  quantity  description  is_tradable
+product_id  seller_id  product_name  display_picture  category  price  quantity  description  payment_method
 
 
 cart
