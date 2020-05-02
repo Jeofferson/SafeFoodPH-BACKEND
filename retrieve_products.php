@@ -27,6 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         FROM product p
         JOIN user u
             ON p.seller_id = u.user_id
+        ORDER BY p.product_id DESC
     ";
     
     $result = $conn->query($sql);
