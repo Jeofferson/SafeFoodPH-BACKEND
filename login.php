@@ -17,6 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (mysqli_num_rows($result) <= 0) {
     
         $output["status"] = "failed";
+        $output["errorMessage"] = "Invalid username or password.";
     
     } else {
     
