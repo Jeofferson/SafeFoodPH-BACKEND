@@ -11,7 +11,7 @@ cart_item_id  product_id  buyer_id
 
 
 order
-order_id  product_id  buyer_id  seller_id  quantity  is_thru_cash  additional_message  is_confirmed  is_delivered
+order_id  product_id  buyer_id  seller_id  quantity  payment_method  additional_message  is_confirmed  is_delivered
 
 
 good_for_trade
